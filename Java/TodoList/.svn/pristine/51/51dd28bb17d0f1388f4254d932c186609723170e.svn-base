@@ -1,0 +1,29 @@
+Task M2.3
+The keyword "this" refers to the class's object. 
+
+Task M3.1
+A constructor is a special method in a class that instantiates an object of that class.
+
+Task M3.2
+The constructor has the same name as the class, including the uppercase initial letter.
+
+Task M7.4
+I used a couple of the methods from the java.lang.String library. In particular I used
+the toLowerCase() and the contains() methods.
+
+Task M8
+ - 1. I learned a couple of the methods in the java.lang.String library and became more familiar
+      with the documentation for the whole language.
+ - 2. I became familiar with the Task List feature of Eclipse.
+ - 3. I'm still a little fuzzy about the use of packages and how that affects the namespace.
+ 
+I feel confident ...
+4 ... using Eclipse.
+4 ... exploring Java code.
+4 ... writing Java code.
+5 ... that I understand the code I wrote in the TodoItem class.
+5 ... that I understand the code I wrote in the TodoList class.
+4 ... that I understand the code in the TestTodoUI class.
+5 ... that I understand the utility of the JUnit tests.
+
+

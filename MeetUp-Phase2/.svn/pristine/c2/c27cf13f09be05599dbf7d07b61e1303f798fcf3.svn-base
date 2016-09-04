@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Brian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-e0b713fb32c0f8528c107b6b6355e61c02fa31a9.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-ffd49613524444bfc1919dd9583b318223b46c6a.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/.gradle/caches/modules-2/files-2.1/org.osmdroid/osmdroid-android/4.2/f3a0c73a9ed04a5d0959789c53da9f08462bfcc2/osmdroid-android-4.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f3a0c73a9ed04a5d0959789c53da9f08462bfcc2">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/osmdroid-android-4.2-7ebc48b227e36d4d6e6a5d68dcd1322f9cd3f84d.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/classes-e28d5ab0ad9793c7ee1d69a0fa053b9c9a049732.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.6.1/58e59bfb3e247097b8122243b3bfe0049c8cfae8/slf4j-simple-1.6.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="58e59bfb3e247097b8122243b3bfe0049c8cfae8">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/slf4j-simple-1.6.1-ab047ab5359ae879e22e59d0ecbae7531d2d2833.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6f3b8a24bf970f17289b234284c94f43eb42f0e4">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/slf4j-api-1.6.1-fff82cea58fb117fd1b640a5382b4db4dba06b51.jar" />
+    </item>
+    <item
+        jar="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/Brian/Google Drive/CPSC 210/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/classes-ae6b116ca8eed0eb9caa3ed5e322ae1d1af7d981.jar" />
+    </item>
+
+</items>

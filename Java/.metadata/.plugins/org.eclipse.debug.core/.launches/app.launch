@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/MeetUp-Phase1/src/ca/ubc/cs/cpsc210/meetup/model/App.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ca.ubc.cs.cpsc210.meetup.model.App"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="MeetUp-Phase1"/>
+</launchConfiguration>

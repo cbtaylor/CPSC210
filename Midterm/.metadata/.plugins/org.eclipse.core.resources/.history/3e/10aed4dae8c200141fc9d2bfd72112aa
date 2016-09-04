@@ -1,0 +1,19 @@
+package characters;
+
+import sports.FiftyMetreDash;
+import sports.MedlaySwimRelay;
+
+public class App {
+
+	public static void main(String[] args) {
+		try {
+			MedlaySwimRelay msr = new MedlaySwimRelay();
+			msr.addPeach(new Peach());
+			msr.getWet();
+		
+		} catch (GameException ge) {
+			System.out.println("Try another race");
+		}
+	}
+
+}

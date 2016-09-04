@@ -1,0 +1,87 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import ca.ubc.cs.cpsc210.meetup.util.CourseTime;
+
+/**
+ * Represent a section for a course
+ */
+public class Section implements Comparable<Section> {
+
+	private Course course;
+	
+	private String name;
+	private String day;
+	private String startTime;
+	private String endTime;
+	private Building building;
+	
+	// Time of course is provided to implement comparable
+	private CourseTime timeOfCourse;
+
+	/**
+	 * Constructor 
+	 * REQUIRES: name is not null, day is "MWF" or "TR", startTime
+	 *   is before endTime and building is not null 
+	 * EFFECTS: object is initialized
+	 *   or the exception IllegalSectionInitialization has occurred
+	 */
+	public Section(String name, String day, String startTime, String endTime,
+			Building building) {
+		this.name = name;
+		this.day = day;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.building = building;
+	}
+
+	@Override
+	public int compareTo(Section o) {
+		return timeOfCourse.compareTo(o.timeOfCourse);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public Building getBuilding() {
+		return building;
+	}
+
+	public void setBuilding(Building building) {
+		this.building = building;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import ca.ubc.cs.cpsc210.meetup.util.LatLon;
+
+public class Building extends Location {
+	
+	private String name;
+	private LatLon latlon;
+	
+	public Building(String name, LatLon latlon) {
+		this.name = name;
+		this.latlon = latlon;
+	}
+	
+	public Building(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LatLon getLatlon() {
+		return latlon;
+	}
+
+	public void setLatlon(LatLon latlon) {
+		this.latlon = latlon;
+	}
+
+}

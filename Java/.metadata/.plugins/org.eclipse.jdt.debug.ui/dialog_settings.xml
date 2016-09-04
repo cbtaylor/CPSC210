@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=PacmanLab2/src&amp;lt;ca.ubc.cpsc210.pacman.ui{Game.java[Game&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=TodoList/\/Applications\/eclipse\/plugins\/org.junit_4.11.0.v201303080030\/junit.jar&amp;lt;org.junit.runner(JUnitCore.class[JUnitCore&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=TodoList/src&amp;lt;ca.ubc.cpsc210.todo.ui{TodoListUI.java[TodoListUI&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=TodoList-Lab4/src&amp;lt;ca.ubc.cpsc210.todo.ui{TodoListUI.java[TodoListUI&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=RobustTrafficLightStarter/src&amp;lt;ca.ubc.cpsc210.trafficlight.gui{IntersectionGUI.java[IntersectionGUI&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=QuizBuilder/src&amp;lt;app{QuizRunner.java[QuizRunner&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="105" key="DIALOG_Y_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="391" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+</section>

@@ -1,0 +1,73 @@
+package midterm;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class HouseTest {
+	
+	private House h;
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+		h = new House();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testInstallFurnaceAllOK() {
+		h.setFurnaceInstalled(false);
+		h.turnGasOnOrOff(false);
+		try {
+			h.installNewFurnace();
+			assertTrue(h.isFurnaceInstalled());
+		} catch (GasException e) {
+			fail("GasException thrown.");
+		} catch (InstalledException e) {
+			fail("InstalledException thrown.");
+		}
+		
+	}
+	
+	@Test (expected = InstalledException.class)
+	public void testInstalledFurnaceTwice() throws InstalledException, GasException {
+		h.setFurnaceInstalled(false);
+		h.turnGasOnOrOff(false);
+		h.installNewFurnace();
+		assertTrue(h.isFurnaceInstalled());
+		h.installNewFurnace();
+		fail("InstalledException should have been thrown.");
+	}
+	
+	@Test (expected = GasException.class)
+	public void testInstalledFurnaceWithGasOn() throws InstalledException, GasException {
+		h.setFurnaceInstalled(false);
+		h.turnGasOnOrOff(true);
+		h.installNewFurnace();
+		fail("GasException should have been thrown.");
+	}	
+	
+	@Test (expected = InstalledException.class)
+	public void testInstalledFurnaceTwiceWithGasOn() throws InstalledException, GasException {
+		h.setFurnaceInstalled(true);
+		h.turnGasOnOrOff(true);
+		h.installNewFurnace();
+		fail("InstalledException should have been thrown.");
+	}	
+
+}

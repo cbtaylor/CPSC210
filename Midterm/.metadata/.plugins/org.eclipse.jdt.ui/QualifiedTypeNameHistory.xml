@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="sports.FiftyMetreDash"/>
+<fullyQualifiedTypeName name="sports.MedlaySwimRelay"/>
+<fullyQualifiedTypeName name="exceptions.GameException"/>
+<fullyQualifiedTypeName name="exceptions.SinkingException"/>
+<fullyQualifiedTypeName name="exceptions.FlyingException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="sports.Sport"/>
+<fullyQualifiedTypeName name="sports.PoolSport"/>
+<fullyQualifiedTypeName name="sports.RunningSport"/>
+</qualifiedTypeNameHistroy>

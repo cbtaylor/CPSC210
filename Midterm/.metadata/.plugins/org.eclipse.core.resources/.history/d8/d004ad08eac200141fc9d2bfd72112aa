@@ -1,0 +1,23 @@
+package characters;
+
+import exceptions.GameException;
+import exceptions.SinkingException;
+import sports.FiftyMetreDash;
+import sports.MedlaySwimRelay;
+
+public class App {
+
+	public static void main(String[] args) {
+		try {
+			MedlaySwimRelay msr = new MedlaySwimRelay();
+			msr.addPeach(new Peach());
+			msr.getWet();
+		} catch (SinkingException se) {
+			System.out.println("Peach is sinking");
+		} catch (GameException ge) {
+			System.out.println("The race is over.");
+		}
+		System.out.println("Try another race");
+	}
+
+}

@@ -1,0 +1,35 @@
+Task M1
+-------
+With assertions enabled it's not possible to put the bus back into a valid state because the
+execution of the program has been halted.
+
+Task M2
+-------
+Objects of type AutoBus can be used anywhere an object of type Bus can be used.
+An object of type AutoBus is said to be assignable to a variable of type Bus.
+This is called subtype polymorphism.  (ref. Learning Java, 4th ed.) However, it's possible
+that the methods of AutoBus have requirements that are weaker than the requirements
+for a comparable method of Bus. This would violate the Liskov principle.
+
+Task M7
+-------
+The bus has been stopped, the door opened, the ramp lowered and an attempt is made to close
+the door. The code should throw a RampException. The test will fail if either a MotionException
+or a DoorException is thrown.
+
+Task M8
+-------
+If a method of the subtype threw more exceptions than the overridden method in the supertype it
+would violate the substitution principle. 
+
+Task M9
+--------
+
+1. 
+a) 4
+b) 4
+c) 4
+d) 4
+e) 4
+f) 4
+g) 4

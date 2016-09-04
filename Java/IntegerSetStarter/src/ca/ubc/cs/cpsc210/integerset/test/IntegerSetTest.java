@@ -1,0 +1,149 @@
+package ca.ubc.cs.cpsc210.integerset.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import ca.ubc.cs.cpsc210.integerset.HashSetIntegerSet;
+import ca.ubc.cs.cpsc210.integerset.IntegerSet;
+import ca.ubc.cs.cpsc210.integerset.LinkedListIntegerSet;
+
+public class IntegerSetTest {
+	private static final int NUMITEMS = 100000;
+	private IntegerSet set;
+	
+	@Before
+	public void runBefore() {
+		IntegerSet setA = new HashSetIntegerSet();
+		IntegerSet setB= new HashSetIntegerSet();
+		setA = setB;
+
+		set = new LinkedListIntegerSet();
+		
+		// set.foo();
+		set = setA;
+		
+		//////////////////////
+		
+		HashSetIntegerSet hSet =  new HashSetIntegerSet();
+		LinkedListIntegerSet lSet = new LinkedListIntegerSet();
+		
+		hSet = lSet;
+		
+		//////////////////////
+		
+		StringInt s = new String("hello");
+		StringInt i = new Integer(5);
+		i = s;
+	}
+	
+	@Test
+	public void testConstructor() {
+		assertEquals(0, set.size());
+	}
+	
+	@Test
+	public void testSize() {
+		assertEquals(0, set.size());
+		
+		for (int i = 0; i < NUMITEMS; i++) {
+			set.insert(i);
+		}
+		
+		// int i = 0;
+		// while (i < NUMITEMS) {
+		//   set.insert(i);
+		//   i = i+1;
+		// }
+		
+		assertEquals(NUMITEMS, set.size());
+	}
+	
+	@Test
+	public void testContainsOne() {
+		assertFalse(set.contains(1));
+		set.insert(1);
+		assertTrue(set.contains(1));
+	}
+	
+	@Test
+	public void testContainsLots() {
+		for (int i = 0; i < 5; i++) {
+			set.insert(i);
+		}
+		
+		for (int i = 0; i < 5; i++) {
+			assertTrue(set.contains(i));
+		}
+	}
+	
+	@Test
+	public void testInsert() {
+		assertFalse(set.contains(1));
+		assertEquals(0, set.size());
+		
+		set.insert(1);
+
+		assertTrue(set.contains(1));
+		assertEquals(1, set.size());
+	}
+
+	@Test
+	public void testDuplicate() {
+		set.insert(1);
+		set.insert(1);
+
+		assertTrue(set.contains(1));
+		assertEquals(1, set.size());
+	}
+
+	@Test
+	public void testInsertLots() {
+		for (int i = 0; i < NUMITEMS; i++) {
+			set.insert(i);
+		}
+
+		assertTrue(set.contains(0));
+		assertTrue(set.contains(NUMITEMS / 2));
+		assertTrue(set.contains(NUMITEMS - 1));
+		assertEquals(NUMITEMS, set.size());
+	}
+	
+	@Test
+	public void testRemove() {
+		set.insert(1);
+		set.remove(1);
+		assertFalse(set.contains(1));
+		assertEquals(0, set.size());
+	}
+	
+	@Test
+	public void testRemoveLots() {
+		for (int i = 0; i < NUMITEMS; i++) {
+			set.insert(i);
+		}
+		
+		for (int i = 0; i < NUMITEMS; i++) {
+			set.remove(i);
+		}
+		
+		assertFalse(set.contains(0));
+		assertFalse(set.contains(NUMITEMS / 2));
+		assertFalse(set.contains(NUMITEMS - 1));
+		assertEquals(0, set.size());
+	}
+	
+	@Test
+	public void testNegativeNumbers() {
+		assertEquals(0,set.size());
+		set.insert(-1);
+		set.insert(-2);
+		assertEquals(2, set.size());
+		assertTrue(set.contains(-1));
+		assertTrue(set.contains(-2));
+		
+		//set.list.add(-1);
+		//assertTrue(set.list.contains(-1));
+	}
+}

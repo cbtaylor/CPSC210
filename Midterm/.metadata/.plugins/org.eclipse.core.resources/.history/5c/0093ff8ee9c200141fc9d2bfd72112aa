@@ -1,0 +1,13 @@
+package characters;
+
+import exceptions.DrowningException;
+
+public class Peach extends SharedCharacterBehaviour {
+
+	public Peach() {
+	}
+	
+	public void swim() {
+		throw new DrowningException();
+	}
+}

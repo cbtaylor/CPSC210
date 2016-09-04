@@ -1,0 +1,5 @@
+package characters;
+
+public class LittleBirdo extends Birdo {
+
+}

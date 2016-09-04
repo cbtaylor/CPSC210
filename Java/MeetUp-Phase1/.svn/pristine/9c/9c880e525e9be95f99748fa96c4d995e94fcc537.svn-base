@@ -1,0 +1,29 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class Course {
+	
+	String code;
+	int number;
+	SortedSet<Section> sections = new TreeSet<Section>();
+	
+	public Course(String code, int number) {
+		this.code = code;
+		this.number = number;
+	}
+	
+	public void addSection(Section section) {
+		sections.add(section);
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public Section getSection(String sectionId) {
+		return sections.first();  //definitely NOT what this should be!
+	}
+
+}

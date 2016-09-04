@@ -1,0 +1,125 @@
+package ca.ubc.cpsc.superbus.model;
+
+/*
+ * Models a bus
+ * 
+ * Invariant:
+ * 	  !isStopped() && !isDoorOpen() && !isRampLowered()
+ *	|| isStopped() && !isDoorOpen() && !isRampLowered()
+ *	|| isStopped() && isDoorOpen() && !isRampLowered()
+ *	|| isStopped() && isDoorOpen() && isRampLowered()
+ */
+public class Bus {
+
+	private boolean bStopped;
+	private boolean bDoorOpen;
+	private boolean bRampExtended;
+	
+	/*
+	 * Constructor
+	 * EFFECTS: bus is stopped, ramp is not lowered and door is closed.
+	 */
+	public Bus() {
+		bStopped = true;
+		bDoorOpen = false;
+		bRampExtended = false;
+		hasValidState();
+	}
+	
+	/*
+	 * REQUIRES: !isDoorOpen()
+	 * MODIFIES: this
+	 * EFFECTS: bus is moving
+	 */
+	public void go() {
+		hasValidState();
+		bStopped = false;
+		hasValidState();
+	}
+	
+	/*
+	 * MODIFIES: this
+	 * EFFECTS: bus is stopped
+	 */
+	public void stop() {
+		hasValidState();
+		bStopped = true;
+		hasValidState();
+	}
+	
+	/*
+	 * EFFECTS: returns true if bus is stopped, false otherwise
+	 */
+	public boolean isStopped() {
+		return bStopped;
+	}
+	
+	/*
+	 * REQUIRES: isStopped()
+	 * MODIFIES: this
+	 * EFFECTS: door is open
+	 */
+	public void openDoor() {
+		hasValidState();
+		bDoorOpen = true;
+		hasValidState();
+	}
+	
+	/*
+	 * REQUIRES: !isRampLowered()
+	 * MODIFIES: this
+	 * EFFECTS: door is closed
+	 */
+	public void closeDoor() {
+		hasValidState();
+		bDoorOpen = false;
+		hasValidState();
+	}
+	
+	/*
+	 * EFFECTS: returns true if door is open, false otherwise
+	 */
+	public boolean isDoorOpen() {
+		return bDoorOpen;
+	}
+	
+	/*
+	 * REQUIRES: isDoorOpen() (which requires isStopped())
+	 * MODIFIES: this
+	 * EFFECTS: ramp is lowered
+	 */
+	public void lowerRamp() {
+		hasValidState();
+		bRampExtended = true;
+		hasValidState();
+	}
+	
+	/*
+	 * REQUIRES: isDoorOpen() 
+	 * MODIFIES: this
+	 * EFFECTS: if !isRampLowered() no change, otherwise ramp is raised
+	 */
+	public void raiseRamp() {
+		hasValidState();
+		if (bRampExtended)
+			bRampExtended = false;
+		hasValidState();
+	}
+	
+	/*
+	 * EFFECTS: returns true if ramp is lowered, false otherwise
+	 */
+	public boolean isRampLowered() {
+		return bRampExtended;
+	}
+	
+	/*
+	 * Check invariants.
+	 */
+	protected void hasValidState() {
+		assert(!isStopped() && !isDoorOpen() && !isRampLowered()
+				|| isStopped() && !isDoorOpen() && !isRampLowered()
+				|| isStopped() && isDoorOpen() && !isRampLowered()
+				|| isStopped() && isDoorOpen() && isRampLowered());
+	}
+}

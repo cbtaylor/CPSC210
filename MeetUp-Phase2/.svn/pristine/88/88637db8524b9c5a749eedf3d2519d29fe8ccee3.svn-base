@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dayOfWeek">
+        <item name="MWF">Monday-Wednesday-Friday</item>
+        <item name="TR">Tuesday-Thursday</item>
+    </string-array>
+
+    <string-array name="dayOfWeekValues">
+        <item name="MWF">MWF</item>
+        <item name="TR">TR</item>
+    </string-array>
+
+    <string-array name="timeOfDay">
+        <item name="10">Morning Break</item>
+        <item name="12">Noon</item>
+        <item name="15">Afternoon Break</item>
+        <item name="18">Dinner</item>
+    </string-array>
+
+    <string-array name="timeOfDayValues">
+        <item name="10">10</item>
+        <item name="12">12</item>
+        <item name="15">15</item>
+        <item name="18">18</item>
+    </string-array>
+    
+    <string-array name="placeDistance">
+        <item name="250">250 m</item>
+        <item name="500">500 m</item>
+        <item name="1000">1000 m</item>
+        <item name="2000">2000 m</item>
+    </string-array>
+    
+    <string-array name="placeDistanceValues">
+        <item name="250">250</item>
+        <item name="500">500</item>
+        <item name="1000">1000</item>
+        <item name="2000">2000</item>
+    </string-array>
+</resources>

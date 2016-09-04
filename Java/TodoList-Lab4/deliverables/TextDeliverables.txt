@@ -1,0 +1,27 @@
+Task M3
+
+Reflect on your experience introducing new types to provide a 3-5 sentence answer to the
+following questions:
+
+1) Do you think that the changes you made to the TodoList-Lab4 project improved the code
+  Why or why not?  (Note: If you are unsure, consider whether the code became more or less
+  readable, maintainable, or manageable).
+  
+  I think by creating an abstract class with two subclasses the code is more manageable,
+  and the functionality of the two subclasses is better handled separately.
+
+2)  Additionally,  please answer the final question using the following scale:
+
+1 - strongly disagree
+2 - disagree
+3 - neutral
+4 - agree
+5 - strongly agree
+
+I feel confident ...
+      4  a) using Eclipse;
+      4  b) exploring Java code;
+      3  c) writing Java code;
+      4  d) that I understand the code in the TodoList-Lab4 project;
+      5  e) that I understand the purpose of refactoring;
+      3  f) that I understand how to use Eclipse tools as in aid in refactoring.

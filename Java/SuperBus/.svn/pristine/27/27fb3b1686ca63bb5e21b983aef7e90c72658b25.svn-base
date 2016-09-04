@@ -1,0 +1,379 @@
+package ca.ubc.cpsc.superbus.ui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.AbstractAction;
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+
+import ca.ubc.cpsc.superbus.model.*;
+import ca.ubc.cpsc.superbus.model.exception.DoorException;
+import ca.ubc.cpsc.superbus.model.exception.MotionException;
+import ca.ubc.cpsc.superbus.model.exception.RampException;
+
+/*
+ * Main frame in which SuperBus application runs. 
+ */
+@SuppressWarnings("serial")
+public class SuperBusFrame extends JFrame {
+	private static final int GAP = 30;
+	private static final String[] busTypes = {"Bus", "AutoBus"};
+	private Bus myBus;
+	private JComboBox busSelector;
+	private JLabel doorState;
+	private JLabel rampState;
+	private JLabel motionState;
+	private JLabel message;
+	private JPanel statePanel;
+	
+	/*
+	 * Constructor
+	 * EFFECTS: initializes application window and centres it on user desktop
+	 */
+	public SuperBusFrame() {
+		setTitle("SuperBus");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		createBusPanel();
+		createStatePanel();
+		createControlPanel();
+		createMessagePanel();
+		setBus("Bus");
+		update();
+		pack();
+		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = (int) (d.getSize().getWidth() - getSize().getWidth()) / 2;
+		int y = (int) (d.getSize().getHeight() - getSize().getHeight()) / 2;
+		
+		setLocation(x, y);
+		setVisible(true);
+	}
+	
+	/*
+	 * Creates bus selection panel
+	 * MODIFIES: this
+	 * EFFECTS: adds panel that contains bus selection tools
+	 */
+	private void createBusPanel() {
+		Box hBox = Box.createHorizontalBox();
+		hBox.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		hBox.add(Box.createHorizontalGlue());
+		hBox.add(new JLabel("BUS TYPE:"));
+		hBox.add(Box.createHorizontalStrut(GAP));
+		busSelector = createComboBox();
+		hBox.add(busSelector);
+		hBox.add(Box.createHorizontalGlue());
+		add(hBox, BorderLayout.NORTH);
+	}
+	
+	/*
+	 * Creates combo box that allows user to select bus type
+	 * EFFECTS: returns combo box for selecting bus type
+	 */
+	private JComboBox createComboBox() {
+		JComboBox cb = new JComboBox(busTypes);
+		cb.addActionListener(new BusSelectorListener());
+		return cb;
+	}
+	
+	/*
+	 * Creates bus state panel
+	 * MODIFIES: this
+	 * EFFECTS: adds panel that represents state of bus
+	 */
+	private void createStatePanel() {
+		statePanel = new JPanel();
+		statePanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		GridLayout gl = new GridLayout(4,2);
+		gl.setHgap(GAP);
+		gl.setVgap(GAP);
+		statePanel.setLayout(gl);
+		statePanel.setBackground(Color.GREEN);
+		statePanel.add(new JLabel("BUS STATE"));
+		statePanel.add(new JLabel());
+		statePanel.add(new JLabel("Door:"));
+		doorState = new JLabel();
+		statePanel.add(doorState);
+		statePanel.add(new JLabel("Ramp:"));
+		rampState = new JLabel();
+		statePanel.add(rampState);
+		statePanel.add(new JLabel("Motion:"));
+		motionState = new JLabel();
+		statePanel.add(motionState);	
+		add(statePanel, BorderLayout.CENTER);
+	}
+	
+	/*
+	 * Creates button control panel
+	 * MODIFIES: this
+	 * EFFECTS: adds panel that allows user to control state of bus
+	 */
+	private void createControlPanel() {
+		Box vBox = Box.createVerticalBox();
+		vBox.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		Box labelBox = Box.createHorizontalBox();
+		labelBox.add(new JLabel("CONTROLS"));
+		labelBox.add(Box.createHorizontalGlue());
+		vBox.add(labelBox);
+		vBox.add(Box.createVerticalGlue());
+		vBox.add(createButtonBox(new OpenAction(), new CloseAction()));
+		vBox.add(Box.createVerticalGlue());
+		vBox.add(createButtonBox(new LowerAction(), new RaiseAction()));
+		vBox.add(Box.createVerticalGlue());
+		vBox.add(createButtonBox(new MoveAction(), new StopAction()));
+		add(vBox, BorderLayout.EAST);
+	}
+	
+	/*
+	 * Creates a box containing related buttons
+	 * EFFECTS: returns a Box containing two buttons - one that triggers each of
+	 * action1 and action2
+	 */
+	private Box createButtonBox(AbstractAction action1, AbstractAction action2) {
+		Box hBox = Box.createHorizontalBox();
+		hBox.add(Box.createHorizontalGlue());
+		hBox.add(new JButton(action1));
+		hBox.add(Box.createHorizontalGlue());
+		hBox.add(new JButton(action2));
+		hBox.add(Box.createHorizontalGlue());
+		return hBox;
+	}
+	
+	/*
+	 * Creates the message panel
+	 * MODIFIES: this
+	 * EFFECTS: adds message panel to window
+	 */
+	private void createMessagePanel() {
+		message = new JLabel(" ");
+		add(message, BorderLayout.SOUTH);
+	}
+	
+	/*
+	 * Writes a message in the message panel
+	 * MODIFIES: this
+	 * EFFECTS: writes message to message panel and updates display
+	 */
+	private void writeMessage(String msg) {
+		message.setText(msg);
+		repaint();
+	}
+	
+	/*
+	 * Updates bus status
+	 * MODIFIES: this
+	 * EFFECTS: repaints the application window
+	 */
+	private void update() {
+		motionState.setText((myBus.isStopped() ? "...stopped" : "...moving"));	
+		doorState.setText((myBus.isDoorOpen() ? "...open" : "...closed"));		
+		rampState.setText((myBus.isRampLowered() ? "...lowered" : "...raised"));
+		statePanel.setBackground(isValidState() ? Color.GREEN : Color.RED);
+		repaint();
+	}
+	
+	/*
+	 * Sets the type of bus
+	 * MODIFIES: this
+	 * EFFECTS: sets the bus type specified by busType and updates the display
+	 */
+	private void setBus(String busType) {
+		if (busType.equals("Bus")) {
+			myBus = new Bus();
+		}
+		else if (busType.equals("AutoBus")) {
+			myBus = new AutoBus();
+		}
+		update();
+	}
+	
+	/*
+	 * Determines if bus is in valid state
+	 * [NOTE: our goal in this lab is to redesign Bus and AutoBus
+	 * so that this method always returns true]
+	 * EFFECTS: returns true if bus is in valid state, false otherwise
+	 */
+	private boolean isValidState() {
+		if (myBus.isStopped() && !myBus.isDoorOpen() && myBus.isRampLowered())
+			return false;
+		else if (!myBus.isStopped() && myBus.isDoorOpen())
+			return false;
+		else if (!myBus.isStopped() && myBus.isRampLowered())
+			return false;
+		else
+			return true;
+	}
+	
+	/*
+	 * Action to be taken when user selects a bus.
+	 */
+	private class BusSelectorListener implements ActionListener {
+
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: sets bus to type selected by user 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			JComboBox src = (JComboBox) ae.getSource();
+			String selected = (String) src.getSelectedItem();
+			setBus(selected);
+		}
+	}
+	
+	/*
+	 * Action to be taken when bus is moved.
+	 */
+	private class MoveAction extends AbstractAction {
+		
+		public MoveAction() {
+			super("Move");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: moves the bus and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			try {
+				myBus.go();
+			} catch (DoorException e) {
+				writeMessage("Door must be closed.");
+			}
+			update();
+		}
+	}
+	
+	/*
+	 * Action to be taken when bus is stopped.
+	 */
+	private class StopAction extends AbstractAction {
+		
+		public StopAction() {
+			super("Stop");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: stops the bus and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			myBus.stop();
+			update();
+		}
+	}
+	
+	/*
+	 * Action to be taken when door is opened.
+	 */
+	private class OpenAction extends AbstractAction {
+		
+		public OpenAction() {
+			super("Open");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: opens the door and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			try {
+				myBus.openDoor();
+			} catch (MotionException e) {
+				writeMessage("Bus must be stopped.");
+			}
+			update();
+		}
+	}
+	
+	/*
+	 * Action to be taken when door is closed.
+	 */
+	private class CloseAction extends AbstractAction {
+		
+		public CloseAction() {
+			super("Close");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: closes the door and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			try {
+				myBus.closeDoor();
+			} catch (RampException e) {
+				writeMessage("Ramp needs to be raised.");
+			}
+			update();
+		}
+	}
+	
+	/*
+	 * Action to be taken when ramp is raised.
+	 */
+	private class RaiseAction extends AbstractAction {
+		
+		public RaiseAction() {
+			super("Raise");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: raises the ramp and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			myBus.raiseRamp();
+			update();
+		}
+	}
+	
+	/*
+	 * Action to be taken when ramp is lowered.
+	 */
+	private class LowerAction extends AbstractAction {
+		
+		public LowerAction() {
+			super("Lower");
+		}
+		
+		/*
+		 * MODIFIES: this
+		 * EFFECTS: lowers the ramp and updates the display 
+		 */
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			writeMessage(" ");			// clear the message area before each action is performed
+			try {
+				myBus.lowerRamp();
+			} catch (MotionException e) {
+				writeMessage("Bus must be stopped.");
+			} catch (DoorException e) {
+				writeMessage("Door must be open.");
+			}
+			update();
+		}
+	}
+}
+
+

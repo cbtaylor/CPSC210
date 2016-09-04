@@ -1,0 +1,25 @@
+package characters;
+
+import sports.PoolSport;
+import exceptions.DrowningException;
+import exceptions.SinkingException;
+
+public class Peach extends SharedCharacterBehaviour implements PoolSport {
+
+	public Peach() {
+	}
+	
+	public void swim() {
+		throw new SinkingException();
+	}
+
+	@Override
+	public void getWet() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void performRun() {
+		
+	}
+}

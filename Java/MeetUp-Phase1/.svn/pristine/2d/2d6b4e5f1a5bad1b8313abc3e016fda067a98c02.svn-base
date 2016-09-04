@@ -1,0 +1,17 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import ca.ubc.cs.cpsc210.meetup.util.LatLon;
+
+public class EatingPlace extends Place {
+	
+	public void EatingPlace(String name, LatLon latlon) {
+		Place(name, latlon);
+		super.addTag("food");
+	}
+	
+	public void EatingPlace(String name) {
+		Place(name);
+		super.addTag("food");
+	}
+
+}

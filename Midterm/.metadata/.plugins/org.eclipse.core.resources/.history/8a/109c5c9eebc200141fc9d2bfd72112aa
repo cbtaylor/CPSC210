@@ -1,0 +1,19 @@
+package characters;
+
+import java.util.ArrayList;
+
+import exceptions.FlyingException;
+import exceptions.GameException;
+import exceptions.SinkingException;
+import sports.FiftyMetreDash;
+import sports.MedlaySwimRelay;
+import sports.Sport;
+
+public class App {
+
+	public static void main(String[] args) {
+		Character c = new Mario(new ArrayList<Sport>());
+		c.setName("Mario The Stupendous");
+	}
+
+}

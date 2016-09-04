@@ -1,0 +1,25 @@
+package characters;
+
+import exceptions.FlyingException;
+import exceptions.GameException;
+import exceptions.SinkingException;
+import sports.FiftyMetreDash;
+import sports.MedlaySwimRelay;
+
+public class App {
+
+	public static void main(String[] args) {
+		int timeToFly;
+		timeToFly = 10;
+		
+		try {
+			Birdo b = new Birdo();
+			b.fly(timeToFly);
+		} catch (FlyingException fe) {
+			System.out.println("Flying exception.");
+		} finally {
+			System.out.println("Finally");
+		}
+	}
+
+}

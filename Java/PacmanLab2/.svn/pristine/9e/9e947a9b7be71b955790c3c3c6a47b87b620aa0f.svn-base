@@ -1,0 +1,107 @@
+M2
+testIsGameOver
+
+Hypothesis 1: in isGameOver method the for loops that search the board for food toggle the
+  accepted    existsFood. I think it might switch it back to false even after its found
+              food.  I deleted the else clause and the tests pass.
+Hypothesis 2: the return statement is incorrect (i.e. gets the boolean values mixed up)
+  rejected    I walked myself through the logic and was satisfied that it was correct.
+Hypothesis 3: Maybe the isPassable or the hasFood method has an error.
+  rejected    I started with Hypothesis 1 and so didn't need to investigate this Hypothesis.
+  
+testMoveTo
+Hypothesis 1: In the test there seems to be an assertTrue that is false since the pacman
+  accepted    has been moved to location (1,1) and then a test was run to see if it could
+              be moved down one unit, which is fine. But the following test tries to move it
+              up one unit (from (1,1)) which would put it inside the wall. So, the assertTrue
+              should be an assertFalse and the following three lines can be removed.
+I didn't get to any other hypotheses since it was a problem in the test, not in the code.
+
+testAddSprite
+Hypothesis 1: The test has an assertTrue(food.hasFood()); after both a tracker monster and
+  accepted    a random monster has been added, but the addSprite method for the monsters
+              has a line indicating that they consume the food. So, the tests should be changed
+              to assertFalse. Making the two changes resulted in the test passing.
+I didn't get to any other hypotheses since it was a problem in the test, not in the code.
+
+makeMove
+Hypothesis 1: The methods getVerticalDirectionToPacman() and getHorizontalDirectionToPacman()
+  accepted    have the directions mixed up. I used the debugger to examine what the values
+              of the various variables were and I noticed that horiz_direction and
+              vert_direction were backwards. Changing the code in those two methods (i.e.
+              switching U and D and also switching R and L made the tests passed.
+
+M3
+ -1. The MODIFIES clause modifies both this and sprite because this refers to the board, and
+     the methods modify both the sprite and the board in which they reside.
+ -2. The longer EFFECTS clause is better as it really explains the details of what's happening.
+
+M4
+ -1. The three classes imported in the Board class are import java.util.ArrayList, 
+     java.util.LinkedList, and java.util.List.
+ -2. The Board class is in the ca.ubc.cpsc210.pacman.model package.
+ -3. The three static fields are BOARD_WIDTH and BOARD_HEIGHT, which are both ints, and
+	 BOARD_DEFN, which is a string.
+ -4. The four instance fields are board (a List of Lists), pacman (a Pacman), randonMonsters (a List)
+     and trackerMonsters (a List).
+ -5. Here is one public method header:
+     	public boolean canMoveTo(int new_x, int new_y) 
+     and one private method header:
+     	private void initBoard() 
+ -6. I've included the place holders as comments and examples from the Board class below them.
+ 
+ // <package statement>
+ package ca.ubc.cpsc210.pacman.model;
+ 
+ // <import statements>
+ import java.util.ArrayList;
+
+ // <class header>
+ public class Board {
+ 
+    // <field declarations> 
+ 	private static int BOARD_WIDTH = 13;
+ 
+    // <method declarations>
+    public Board() {
+		initBoard();
+	}
+}
+
+ -7. 
+ 
+package cs.ubc.cs.util;
+
+import java.util.LinkedList;
+
+public class ListUtilities {
+
+    LinkedList data;
+    
+    public LinkedList getData() { return data; }
+    
+}
+
+ -8. A constructor is a special method with the same name as the class (including the initial
+     capital letter) that is called when an object is instantiated. Normal methods in a class
+     can have any other name and any particular functionality, as desired.
+     
+ -9. public ListUtilities() {
+ 
+M5
+1. I found it helpful to walk through the code in my head first and then if I couldn't figure out
+   the problem the debugger was useful to examine the field values.
+2. Multiple hypotheses are useful since it forces you to think of possible paths before spending
+   too long investigating any one path.
+3. I learned about method overloading, e.g. the three distinct moveTo methods.
+4. I became a bit more comfortable with the Eclipse debugger.
+5. I'm still a bit fuzzy on the exact requirements of the REQUIRES comment.
+
+6. I feel confident using Eclipse (3)
+   I feel confident exploring Java code (4)
+   I feel confident writing Java code (2)
+   I feel confident that I understand the code in the Pacman project (3)
+   I feel confident that I understand the code in the TrackerMonsterTest test class (4)
+   I feel confident that I understand the code in the TrackerMonster class (4)
+   I feel confident that I understand the utility of JUnit tests (4)
+        

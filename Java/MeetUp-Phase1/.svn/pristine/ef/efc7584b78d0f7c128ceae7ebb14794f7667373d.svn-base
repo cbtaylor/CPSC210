@@ -1,0 +1,12 @@
+<Schedules xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Student>
+		<LastName>Seed</LastName>
+		<FirstName>Apple</FirstName>
+		<Id>123456</Id>
+	</Student>
+	<Schedule>
+		<StudentId>123456</StudentId>
+		<Section name="201" courseCode="CPSC" courseNumber="210" />
+		<Section name="201" courseCode="BIOL" courseNumber="201" />
+	</Schedule>
+</Schedules>

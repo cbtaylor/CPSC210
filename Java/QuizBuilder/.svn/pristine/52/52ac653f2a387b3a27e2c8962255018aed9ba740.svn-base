@@ -1,0 +1,43 @@
+package question;
+
+/**
+ * Represents a quiz question. A question is composed of a mark, and a question.
+ */
+public abstract class Question {
+
+    // The maximum mark that a user can get for a right answer to this question.
+    protected double maxMark;
+
+    // The question string for the question.
+    protected String questionString;
+
+    // REQUIRES: maxMark must be a value >=0.
+    public Question(double maxMark, String questionString) {
+        assert (maxMark > 0);
+
+        this.maxMark = maxMark;
+        this.questionString = questionString;
+    }
+
+    public double getMaxMark() {
+        return maxMark;
+    }
+
+    public void setMaxMark(double newMark) {
+        this.maxMark = newMark;
+    }
+
+    public String getQuestionString() {
+        return questionString + " [" + maxMark + " points]";
+    }
+    
+    public String getHint(){
+    	return "Replace this with a hint!";
+    }
+
+    /**
+     * Evaluates the answer to the question as correct (true), or incorrect
+     * (false).
+     */
+    public abstract boolean isCorrect(String answer);
+}

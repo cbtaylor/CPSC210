@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ca.ubc.cs.cpsc210.meetup.parser.MapqestParser.java&apos; to &apos;MapquestParser.java&apos;&#x0A;- Original project: &apos;MeetUp-Phase1&apos;&#x0A;- Original element: &apos;ca.ubc.cs.cpsc210.meetup.parser.MapqestParser.java&apos;&#x0A;- Renamed element: &apos;ca.ubc.cs.cpsc210.meetup.parser.MapquestParser.java&apos;" description="Rename compilation unit &apos;MapqestParser.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ca.ubc.cs.cpsc210.meetup.parser{MapqestParser.java" name="MapquestParser.java" references="false" stamp="1427761453323" version="1.0"/>
+</session>

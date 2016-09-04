@@ -1,0 +1,83 @@
+package ca.ubc.cpsc210.todo.model;
+
+import java.util.Date;
+import java.util.UUID;
+
+/*
+ * Representation of a Todo item
+ */
+public class TodoItem {
+
+	private String id;
+	private String title;
+	private String description;
+	private Date dueDate;
+	private boolean completed;
+	
+	/*
+	 * Todo Item Constructor
+	 * Note: This method is called when you call 'new TodoItem(...)' from another class
+	 */
+	public TodoItem(String title, String description, Date dueDate) {
+		
+		this.id = UUID.randomUUID().toString();
+
+		// TODO: complete the constructor
+	}
+	
+	// EFFECTS: returns the id
+	public String getId() {
+		// TODO: implement this method
+		return null;
+	}
+
+	// EFFECTS: returns the title
+	public String getTitle() {
+		// TODO: implement this method
+		return null;
+	}
+
+	// MODIFIES: this
+	// EFFECTS:  sets the title
+	public void setTitle(String title) {
+		// TODO: implement this method
+	}
+
+	// EFFECTS: returns the description
+	public String getDescription() {
+		// TODO: implement this method
+		return null;
+	}
+
+	// MODIFIES: this
+	// EFFECTS:  sets the description
+	public void setDescription(String description) {
+		// TODO: implement this method
+	}
+
+	// EFFECTS: returns the due date
+	public Date getDueDate() {
+		// TODO: implement this method
+		return null;
+	}
+
+	// MODIFIES: this
+	// EFFECTS:  sets the due date
+	public void setDueDate(Date dueDate) {
+		// TODO: implement this method
+	}
+
+	// EFFECTS: returns whether the item is completed or not
+	public boolean isCompleted() {
+		// TODO: implement this method
+		return false;
+	}
+
+	// MODIFIES: this
+	// EFFECTS:  sets whether this item is completed
+	public void setCompleted(boolean completed) {
+		// TODO: implement this method
+	}
+	
+
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ListPreference
+            android:entries="@array/dayOfWeek"
+            android:entryValues="@array/dayOfWeekValues"
+            android:key="dayOfWeek"
+            android:defaultValue="MWF"
+            android:summary="Set the day of week to look for a place to meetup"
+            android:title="Day of Week" >
+        </ListPreference>
+
+        <ListPreference
+            android:entries="@array/timeOfDay"
+            android:entryValues="@array/timeOfDayValues"
+            android:key="timeOfDay"
+            android:defaultValue="12"
+            android:summary="Set the time of day to look for a place to meetup"
+            android:title="Time of Day" >
+        </ListPreference>
+
+        <ListPreference
+            android:entries="@array/placeDistance"
+            android:entryValues="@array/placeDistanceValues"
+            android:key="placeDistance"
+            android:defaultValue="500"
+            android:summary="Set how close of the meetup place should be"
+            android:title="Place Distance Options" >
+        </ListPreference>
+
+        <ListPreference
+            android:entries="@array/foodChoices"
+            android:entryValues="@array/foodChoicesValues"
+            android:key="foodChoice"
+            android:defaultValue="Food"
+            android:summary="Set food preferences"
+            android:title="Food Choice Options" >
+        </ListPreference>
+
+</PreferenceScreen>

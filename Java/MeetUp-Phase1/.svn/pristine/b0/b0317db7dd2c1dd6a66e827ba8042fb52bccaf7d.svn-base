@@ -1,0 +1,30 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import ca.ubc.cs.cpsc210.meetup.util.LatLon;
+
+public class Place extends Location {
+	
+	private String name;
+	private Set<String> tags = new HashSet<String>();
+	
+	public void Place(String name, LatLon latlon) {
+		this.name = name;
+		this.latlon = latlon;
+	}
+	
+	public void Place(String name) {
+		this.name = name;
+	}
+	
+	public void addTag(String tag) {
+		tags.add(tag);
+	}
+	
+	public boolean containsTag(String tag) {
+		return tags.contains(tag);
+	}
+
+}

@@ -1,0 +1,66 @@
+Task M1
+A few keywords I'm not sure about: static final this
+I looked in the Oracle Java documentation and I also browsed on Wikipedia.
+
+Task M2
+In Board.java I looked in the Outline and saw tickBoard() and when I looked at the function it
+appears to update the monsters and the pacman.
+
+Task M3
+Diagram included in deliverables
+
+Task M4
+tickBoard() first updates each monster in the trackerMonsters list by calling the makeMove()
+method on each of the monsters. It uses a for-each loop to iterate over the list.
+Once it has done that it updates each monster in the randomMonsters list by calling
+the moveMove() method on each of the monsters. It uses a for-each loop to iterate over the list.
+Finally it updates the pacman object by calling the makeMove() method.
+
+Task M5
+Part 1. By moving the closing brace '}' the pacman.makeMove() command is now part of the
+        body of the for-each loop. When I run the program it's not actually that different.
+        The user is still able to control the direction of the pacman and it moves in a similar
+        fashion as before the change.
+Part 2. New objects are constructed in the following lines:
+		pacman = new Pacman(this);
+		randomMonsters = new LinkedList<RandomMonster>();
+		In the first line the object is a new object of the Pacman class.
+		In the second line the object is a new object of the LinkedList class.
+Part 3. The method being called in the last line is Pacman.setLocation().
+        The parameters being passed to the moveTo method are sprite, new_x and new_y.
+        sprite is of type Pacman, and new_x and new_y are ints
+Part 4. x = 0 and y = 0 on the 1st iteration
+        x = 1 and y = 0 on the 2nd iteration
+        x = 2 and y = 1 on the 16th iteration
+        x and y represent the cell location, i.e. the row and column
+Part 5. There are two instances of the RandomMonster class and one instance of the
+        TrackerMonster class.
+Part 6. The || operator is the logical OR operator.
+        So, the last line (return pacmanCaught || !existsFood;) returns either true
+        or false depending on the values of pacmanCaught and existsFood.
+
+Task M6
+I found it a bit tricky distinguishing between step-in and step-over, but once I played
+around with the debugger it became clear.
+Placing the breakpoint inside the loop for part 5 of the previous task resulted in having to
+step over quite a number of lines of code. It was better to put the breakpoint later to find
+out what had actually happened by the time the loop was done.
+
+Task M7
+Part 1. I learned about the syntax of the two different types of for loops.
+        I learned that method overloading is possible (e.g. multiple moveTo methods)
+        I learned about the symbols used for logical connectives, && and ||
+Part 2. I learned how to use the debugger in Eclipse. I can see this will be extremely
+        helpful to figure out what's wrong with a specific piece of code.
+        I learned how to look at the Call Hierarchy for specific methods, which is useful
+        for knowing what methods call a specific method and what methods are called by
+        that method.
+        I learned how to jump to different method declarations, which will be very useful
+        for figuring out what is going on in the program.
+Part 3. I'm not sure how the updating takes place with respect to a clock tick.
+Part 4. 3 - I feel confident using Eclipse
+        4 - I feel confident exploring Java code
+        2 - I feel confident writing Java code
+        3 - I feel confident that I understand the code in the Pacman project
+        3 - I feel confident that I understand the code in the Board class
+        4 - I feel confident that I understand the intra-method control flow diagrams

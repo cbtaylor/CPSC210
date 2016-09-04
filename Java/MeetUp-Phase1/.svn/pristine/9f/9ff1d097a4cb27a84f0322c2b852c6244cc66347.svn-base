@@ -1,0 +1,30 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import java.util.Set;
+
+public class Course {
+	
+	String code;
+	int number;
+	Set<Section> sections;
+	
+	public Course(String code, int number) {
+		this.code = code;
+		this.number = number;
+	}
+	
+	public void addSection(Section section) {
+		sections.add(section);
+	}
+
+	public int getNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Section getSection(String sectionId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

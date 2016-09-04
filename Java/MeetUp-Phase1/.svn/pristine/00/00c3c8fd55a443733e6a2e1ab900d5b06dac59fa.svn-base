@@ -1,0 +1,75 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import ca.ubc.cs.cpsc210.meetup.exceptions.IllegalCourseTimeException;
+import ca.ubc.cs.cpsc210.meetup.util.CourseTime;
+import ca.ubc.cs.cpsc210.meetup.util.LatLon;
+
+public class App {
+
+	public static void main(String[] args) throws IllegalCourseTimeException {
+		Place p1 = new Place("Starbucks");
+		p1.addTag("coffee");
+		System.out.println(p1.getName());
+		System.out.println(p1.containsTag("coffee"));
+		System.out.println(p1.containsTag("food"));
+
+		Place p2 = new Place("Tim Hortons", new LatLon());
+		p2.addTag("coffee");
+		System.out.println(p2.getName());
+		System.out.println(p2.containsTag("coffee"));
+		System.out.println(p2.containsTag("food"));
+
+		Place p3 = new Place("Bookstore", new LatLon(123.45, 49.123));
+		p3.addTag("books");
+		p3.addTag("coffee");
+		System.out.println(p3.getName());
+		System.out.println(p3.containsTag("coffee"));
+		System.out.println(p3.containsTag("books"));
+		System.out.println(p3.containsTag("food"));
+
+		LatLon l1 = new LatLon(49.123, -123.45);
+		LatLon l2 = new LatLon(50.123, -123.45);
+		System.out.println(l1.getLatitude());
+		System.out.println(l1.getLongitude());
+		System.out.println(l1.distanceBetweenTwoLatLon(l1, l2));
+
+		EatingPlace e1 = new EatingPlace("Pit");
+		e1.addTag("beer");
+		System.out.println(e1.getName());
+		System.out.println(e1.containsTag("beer"));
+		System.out.println(e1.containsTag("food"));
+		
+		CourseTime time0 = null;
+		CourseTime time1 = new CourseTime("10:30", "11:20");
+		CourseTime time2 = new CourseTime("13:00", "13:50");
+		CourseTime time3 = new CourseTime("10:30", "11:20");
+
+		System.out.println(time1.compareTo(time2));
+		System.out.println(time2.compareTo(time1));
+		System.out.println(time1.compareTo(time3));
+		System.out.println(time1.compareTo(time0));
+
+
+
+		/*
+		CourseFactory courseFactory;
+		Course course210;
+		
+		CourseFactory.reset();
+		courseFactory = CourseFactory.getInstance();
+
+		// Create a course 210 with two sections, just like now!
+		course210 = courseFactory.getCourse("CPSC", 210);
+		System.out.println(course210.toString());
+		course210.addSection(new Section("201", "MWF", "12:00", "12:50", new Building("I", new LatLon())));
+		course210.addSection(new Section("202", "MWF", "13:00", "13:50", new Building("J", new LatLon())));
+		
+		Course course210another = new Course("CPSC", 210);
+		course210another.addSection(new Section("201", "MWF", "12:00", "12:50",
+				new Building("I", new LatLon())));
+		course210another.addSection(new Section("202", "MWF", "13:00", "13:50",
+				new Building("J", new LatLon())));
+		assertTrue(course210.equals(course210another));
+		*/
+	}
+}

@@ -1,0 +1,97 @@
+package ca.ubc.cs.cpsc210.meetup.model;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import ca.ubc.cs.cpsc210.meetup.util.LatLon;
+
+/*
+ * Provide a factory for places that have been "seen"
+ */
+public class PlaceFactory {
+	
+	// NOTE: A place may not have a unique name. The combination
+	// of name, lat and lon is unique.
+	
+	// Remember all the places that have been seen. The key is the course code (e.g., all CPSC courses)
+	private Map<String, Set<Place>> places;
+	
+	// Singleton pattern
+	private static PlaceFactory instance = null;
+	
+	/**
+	 * Return the factory instance
+	 * EFFECTS: Returns a factory for looking up a place
+	 */
+	public static PlaceFactory getInstance() {
+		if (instance == null)
+			instance = new PlaceFactory();
+		return instance;
+	}
+	
+	/**
+	 * Reset for testing
+	 */
+	public static void reset() {
+		instance = null;
+	}
+
+	/**
+	 * Constructor. Only the singleton needs to create.
+	 */
+	protected PlaceFactory() {
+		places = new HashMap<String, Set<Place>>();
+	}
+
+	/**
+	 * Retrieve a place, create the place if it hasn't been seen before
+	 * REQUIRES: code != null and code.length() > 0 and number > 0
+	 * MODIFIES: this
+	 * EFFECTS: Returns a non-null place that this object will remember
+	 */
+	public Place getPlace(String name, LatLon latlon) {
+		// Get the places with a given name from the map
+		Set<Place> placesWithName = places.get(name);
+
+		// The place doesn't exist, add it
+		if (placesWithName == null)
+			return addPlace(name, latlon);
+		
+		// Is there a place with the given name?
+		Place placeOfInterest = null;
+		for (Place aPlace : placesWithName) {
+			if (aPlace.getName() == name)
+				placeOfInterest = aPlace;
+		}
+
+		if (placeOfInterest != null) {
+			// There is a place, return it
+			return placeOfInterest;
+		} else {
+			return addPlace(name, latlon);
+		}
+
+	}
+	
+	/**
+	 * Helper method to add a place
+	 */
+	private Place addPlace(String name, LatLon latlon) {
+		// Create the Place
+		Place place = new Place(name, latlon);
+		
+		// See if we need to add it to the set of places keyed only on four letter code
+		if (places.containsKey(name)) {
+			Set<Place> placesWithName = places.get(name);
+			placesWithName.add(place);
+		} else {
+			Set<Place> placesWithName = new HashSet<Place>();
+			placesWithName.add(place);
+			places.put(name, placesWithName);
+		}
+		return place;
+	}
+	
+}

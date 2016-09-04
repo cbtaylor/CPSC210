@@ -1,0 +1,14 @@
+package characters;
+
+import exceptions.DrowningException;
+import exceptions.SinkingException;
+
+public class Peach extends SharedCharacterBehaviour {
+
+	public Peach() {
+	}
+	
+	public void swim() {
+		throw new SinkingException();
+	}
+}

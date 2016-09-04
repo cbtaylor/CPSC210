@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/murphy/android-sdks/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-805edc9c142ce384715086026a5dbc3c4f1ff308.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/classes-e4feacb47fd3b2783cff801240327a22a9c32a37.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b687b2d7884742bc26ea89b477882ca58fa208ca.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/classes-bb6f0cb2a8921f52fc1c078687cd8569428b3d3e.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.6.1/58e59bfb3e247097b8122243b3bfe0049c8cfae8/slf4j-simple-1.6.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="58e59bfb3e247097b8122243b3bfe0049c8cfae8">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/slf4j-simple-1.6.1-c4f02143905eea6b5e0e43cc8539a58e274cb7e6.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp-Phase2/app/build/intermediates/pre-dexed/debug/classes-b2c2da0008c59b55fd1e48936f985960b321ecbc.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/classes-75de62085eb74a743a9774b4e40f1ced8726e882.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/.gradle/caches/modules-2/files-2.1/org.osmdroid/osmdroid-android/4.2/f3a0c73a9ed04a5d0959789c53da9f08462bfcc2/osmdroid-android-4.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f3a0c73a9ed04a5d0959789c53da9f08462bfcc2">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/osmdroid-android-4.2-2ba957b1dd3a88ef9eb93e766e04ac0a440de076.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-239c29f27e42b3273f0cd9f90277955fba41aba2.jar" />
+    </item>
+    <item
+        jar="/Users/murphy/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6f3b8a24bf970f17289b234284c94f43eb42f0e4">
+        <dex dex="/Users/murphy/AndroidStudioProjects/MeetUp/app/build/intermediates/pre-dexed/debug/slf4j-api-1.6.1-77e48884c08ecea49bbd6428c0328447ca2cbe1f.jar" />
+    </item>
+
+</items>

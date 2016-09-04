@@ -1,0 +1,20 @@
+/**
+ * A class that uses a LocationService to determine the current continent ---
+ * via the whichContinent method.
+ */
+public class WhereAmI {
+
+    /*
+     * This method queries locator for Internet distances to the 7 continents
+     * around the globe and returns the current continent name as a string.
+     * 
+     * EFFECTS: returns the current continent name as a string; one of the following
+     *          seven strings: "North America", "South America", "Europe",
+     *          "Asia", "Africa", "Australia", "Antarctica"
+     */
+    public String whichContinent(ILocationService locator) {
+    		// Replace this stub with a full implementation of the method!
+        return "Unknown Continent";   // STUB
+    }
+
+}

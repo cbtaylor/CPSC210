@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "code": 200
+  },
+  "notifications": [
+    {
+      "type": "notificationTray",
+      "item": {
+        "unreadCount": 0
+      }
+    }
+  ],
+  "response": {
+    "venues": [
+      {
+        "id": "51f001b3498e94348599cc56",
+        "name": "Koerner's Pub",
+        "contact": {},
+        "location": {
+          "address": "6371 Crescent Rd",
+          "crossStreet": "at West Mall",
+          "lat": 49.26872026387557,
+          "lng": -123.25797449674253,
+          "distance": 1098,
+          "cc": "CA",
+          "city": "Vancouver",
+          "state": "BC",
+          "country": "Canada",
+          "formattedAddress": [
+            "6371 Crescent Rd (at West Mall)",
+            "Vancouver BC"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d11b941735",
+            "name": "Pub",
+            "pluralName": "Pubs",
+            "shortName": "Pub",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "verified": false,
+        "stats": {
+          "checkinsCount": 362,
+          "usersCount": 140,
+          "tipCount": 10
+        },
+        "url": "http://koerners.ca",
+        "specials": {
+          "count": 0,
+          "items": []
+        },
+        "hereNow": {
+          "count": 0,
+          "summary": "Nobody here",
+          "groups": []
+        },
+        "referralId": "v-1424670887"
+      },
+      {
+        "id": "4ba778dcf964a520809639e3",
+        "name": "Starbucks",
+        "contact": {
+          "phone": "6042210200",
+          "formattedPhone": "(604) 221-0200",
+          "twitter": "starbucks",
+          "facebook": "22092443056",
+          "facebookUsername": "Starbucks",
+          "facebookName": "Starbucks"
+        },
+        "location": {
+          "address": "5763 Dalhousie Rd.",
+          "crossStreet": "in UBC Village",
+          "lat": 49.265826751384516,
+          "lng": -123.24248746627046,
+          "distance": 649,
+          "postalCode": "V6T 2H9",
+          "cc": "CA",
+          "city": "Vancouver",
+          "state": "BC",
+          "country": "Canada",
+          "formattedAddress": [
+            "5763 Dalhousie Rd. (in UBC Village)",
+            "Vancouver BC V6T 2H9"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d1e0931735",
+            "name": "Coffee Shop",
+            "pluralName": "Coffee Shops",
+            "shortName": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "verified": true,
+        "stats": {
+          "checkinsCount": 1626,
+          "usersCount": 385,
+          "tipCount": 6
+        },
+        "url": "http://www.starbucks.com",
+        "specials": {
+          "count": 0,
+          "items": []
+        },
+        "hereNow": {
+          "count": 0,
+          "summary": "Nobody here",
+          "groups": []
+        },
+        "storeId": "4420",
+        "referralId": "v-1424670887"
+      }
+    ]
+  }
+}

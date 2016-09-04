@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="appUsers.xslt" ?>
+<applicationUsers>
+  <user firstName="Joe" lastName="Fawcett" />
+  <user firstName="Danny" lastName="Ayers" />
+  <user firstName="Catherine" lastName="Middleton" />
+</applicationUsers>
